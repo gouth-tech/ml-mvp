@@ -1,4 +1,5 @@
 import pickle
+from fetch_mail import read_email_from_gmail
 import pandas as pd
 import nltk
 from nltk.corpus import stopwords
@@ -6,10 +7,13 @@ from nltk.tokenize import punkt
 from nltk.corpus.reader import wordnet
 from nltk.stem import WordNetLemmatizer
 from sklearn.feature_extraction.text import TfidfVectorizer
+
+
 nltk.download('stopwords')
 nltk.download('wordnet')
 path_models = "/home/user/Projects/ml-mvp/Models/"
 
+read_email_from_gmail()
 # SVM
 path_svm = path_models + 'best_svc.pickle'
 with open(path_svm, 'rb') as data:
