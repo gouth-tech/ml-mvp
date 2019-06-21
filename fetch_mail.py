@@ -2,8 +2,8 @@ import imaplib
 import email
 
 
-FROM_EMAIL = "gouthammn96@gmail.com"
-FROM_PWD = "Gouthz123"
+FROM_EMAIL = "Your email id"
+FROM_PWD = "Your Password"
 SMTP_SERVER = "imap.gmail.com"
 SMTP_PORT = 993
 
