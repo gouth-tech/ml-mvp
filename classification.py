@@ -7,11 +7,13 @@ from nltk.tokenize import punkt
 from nltk.corpus.reader import wordnet
 from nltk.stem import WordNetLemmatizer
 from sklearn.feature_extraction.text import TfidfVectorizer
+import os, sys
 
 
+base_path = os.path.dirname(os.path.abspath(sys.argv[0]))
 nltk.download('stopwords')
 nltk.download('wordnet')
-path_models = "/home/user/Projects/ml-mvp/Models/"
+path_models = base_path + "/Models/"
 
 
 # SVM
@@ -19,7 +21,7 @@ path_svm = path_models + 'best_svc.pickle'
 with open(path_svm, 'rb') as data:
     svc_model = pickle.load(data)
 
-path_tfidf = "/home/user/Projects/ml-mvp/Feature Engineering/Pickles/tfidf.pickle"
+path_tfidf = base_path + "/Feature Engineering/Pickles/tfidf.pickle"
 with open(path_tfidf, 'rb') as data:
     tfidf = pickle.load(data)
 
