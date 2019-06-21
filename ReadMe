@@ -1,0 +1,5 @@
+1.We are using NLTK(Natural Language Toolkit) which is one of the powerful NLP library.
+2.Here we are using a pre-trained model which is trained using huge amount of datasets
+3.We provide the content of the mail as an input to this model for prediction
+4.Following are the
+    4.1.
