@@ -1,5 +1,5 @@
 import pickle
-from fetch_mail import read_email_from_gmail
+from Mail.fetch_mail import read_email_from_gmail
 import pandas as pd
 import nltk
 from nltk.corpus import stopwords
@@ -13,7 +13,7 @@ nltk.download('stopwords')
 nltk.download('wordnet')
 path_models = "/home/user/Projects/ml-mvp/Models/"
 
-read_email_from_gmail()
+
 # SVM
 path_svm = path_models + 'best_svc.pickle'
 with open(path_svm, 'rb') as data:
@@ -89,6 +89,5 @@ def predict_from_text(text):
     print("The conditional probability is: %a" % (prediction_svc_proba.max() * 100))
 
 
-file = open('data.txt','r+')
-text = file.read()
-predict_from_text(text)
+text = read_email_from_gmail()
+predict_from_text(str(text))

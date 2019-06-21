@@ -24,12 +24,10 @@ def read_email_from_gmail():
         for response_part in data:
             if isinstance(response_part, tuple):
                 msg = email.message_from_bytes(response_part[1])
-                file = open('data.txt', "w+")
-                file.flush()
                 for part in msg.walk():
                     if part.get_content_type() == "text/plain":  # ignore attachments/html
                         body = part.get_payload(decode=True)
-                        file.write(str(body))
+                        return body
 
 
 
