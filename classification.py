@@ -11,8 +11,8 @@ import os, sys
 
 
 base_path = os.path.dirname(os.path.abspath(sys.argv[0]))
-nltk.download('stopwords')
-nltk.download('wordnet')
+#nltk.download('stopwords')
+#nltk.download('wordnet')
 path_models = base_path + "/Models/"
 
 
@@ -87,9 +87,12 @@ def predict_from_text(text):
     # Return result
     category_svc = get_category_name(prediction_svc)
 
-    print("The predicted category using the SVM model is %s." % (category_svc))
-    print("The conditional probability is: %a" % (prediction_svc_proba.max() * 100))
+    #print("The predicted category using the SVM model is %s." % (category_svc))
+    #print("The conditional probability is: %a" % (prediction_svc_proba.max() * 100))
+    return category_svc
 
 
 text = read_email_from_gmail()
-predict_from_text(str(text))
+
+
+

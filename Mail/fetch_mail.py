@@ -4,12 +4,12 @@ import email
 
 SMTP_SERVER = "imap.gmail.com"
 SMTP_PORT = 993
-
+username = input("Enter email: ")
 
 def read_email_from_gmail():
 
     M = imaplib.IMAP4_SSL(SMTP_SERVER)
-    username = input("Enter email: ")
+    #username = input("Enter email: ")
     M.login(username, getpass.getpass())
     M.select()
     type, data = M.search(None, 'ALL')

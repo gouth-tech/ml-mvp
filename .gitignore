@@ -113,3 +113,5 @@ nginx.conf
 facebook_images
 deploydjango.sh
 celerybeat.pid
+sendgrid.env
+sendgrid.env
